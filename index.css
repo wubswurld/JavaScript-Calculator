@@ -185,8 +185,12 @@ html {
   .equal {
     background-image: linear-gradient(to bottom, #f1f1f7, #f5f7f8);
     grid-column: -2;
-    grid-row: 2 / span 4;
+    grid-row: 3 / span 3;
     border-radius: 2px; 
+  }
+  .modulus {
+    grid-column: 4;
+    grid-row: 2 / span 1;
   }
 
   .hvr-grow {
@@ -203,6 +207,10 @@ html {
   .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
     -webkit-transform: scale(0.9);
     transform: scale(1.1);
+  }
+  .green {
+    color:blue;
+    background: lightgrey;
   }
  
   

@@ -1,3 +1,4 @@
+
 const calc = document.querySelector('.calculator')
 const keys = document.querySelector('.keys')
 const display = document.querySelector('.display')
@@ -12,6 +13,8 @@ const calculate = (n1, operator, n2) => {
       result = parseFloat(n1) * parseFloat(n2)
     } else if (operator === 'divide') {
       result = parseFloat(n1) / parseFloat(n2)
+    } else if (operator === 'mod') {
+        result = parseFloat(n1) % parseFloat(n2)
     }
     return result
   }
@@ -35,7 +38,11 @@ if(keys){
         if (action === 'decimal'){
             display.textContent = displayedNum + '.'
         }
-        if (action === 'add' || action === 'subtract' || action === 'multiply' || action === 'divide') {
+        if (display.textContent === 'decimal')
+        {
+            display.textContent = '.' + keyContent
+        }
+        if (action === 'add' || action === 'subtract' || action === 'multiply' || action === 'divide' || action === 'mod') {
             calc.dataset.previousKeyType = 'op'
             calc.dataset.firstValue = displayedNum
             calc.dataset.operator = action
@@ -53,3 +60,19 @@ if(keys){
     }
    })
 }
+
+// var buttons = document.querySelectorAll('button');
+
+// [].forEach.call(buttons, function(btn) {
+//   btn.addEventListener('click', function() {
+//     var clickedButton = this;
+//     [].forEach.call(buttons, function(innerBtn) {
+//       if (innerBtn !== clickedButton) {
+//         innerBtn.classList.remove('green');
+//       }
+//       else {
+//         innerBtn.classList.add('green');
+//       }
+//     });
+//   });
+// });
